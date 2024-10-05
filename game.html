@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Conquest-Game-Frame</title>
+</head>
+<body>
+
+    <div class="frame">
+        <div class="creatCharacter">
+            <h2>Create Character</h2>
+            <div class="menu">
+                <div class="race">
+                    <h3>Race</h3>
+                    <div class="line"></div>
+                    <div class="table">
+                        <button class="btns" onclick="dragonborn()">Dragonborn</button>
+                        <button class="btns" onclick="dwarf()">Dwarf</button>
+                        <button class="btns" onclick="elf()">Elf</button>
+                        <button class="btns" onclick="gnome()">Gnome</button>
+                        <button class="btns" onclick="halfElf()">Half-Elf</button>
+                        <button class="btns" onclick="halfing()">Halfing</button>
+                        <button class="btns" onclick="halfOrc()">Half-Orc</button>
+                        <button class="btns" onclick="human()">Human</button>
+                        <button class="btns" onclick="tiefling()">Tiefling</button>
+                    </div>
+                    <div class="description">
+                        <h4>Description</h4>
+                        <div class="text">
+                            <p id="race-desc">In the reckonings of most worlds, humans are the youngest of the common races, late to arrive on the world scene and short-lived in comparison to dwarves, elves, and dragons. Perhaps it is because of their shorter lives that they strive to achieve as much as they can in the years they are given. Or maybe they feel they have something to prove to the elder races, and that’s why they build their mighty empires on the foundation of conquest and trade. Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds.</p>
+                        </div>
+                    </div>
+                    <div class="selected">
+                        <img id="race-img" src="avatar/human.png" alt="">
+                        <div class="ss">
+                            <h4>Selected:</h4>
+                            <input id="race-selected" type="text" readonly value="Human">
+                        </div>
+                    </div>
+                    <div class="page">
+                        <button class="main btns" onclick="nextRace()">Next</button>
+                    </div>
+                </div>
+                <div class="class">
+                    <h3>Class</h3>
+                    <div class="line"></div>
+                    <div class="table">
+                        <button class="btns" onclick="barbarian()">Barbarian</button>
+                        <button class="btns" onclick="bard()">Bard</button>
+                        <button class="btns" onclick="cleric()">Cleric</button>
+                        <button class="btns" onclick="druid()">Druid</button>
+                        <button class="btns" onclick="fighter()">Fighter</button>
+                        <button class="btns" onclick="monk()">Monk</button>
+                        <button class="btns" onclick="paladin()">Paladin</button>
+                        <button class="btns" onclick="ranger()">Ranger</button>
+                        <button class="btns" onclick="rogue()">Rogue</button>
+                        <button class="btns" onclick="sorcerer()">Sorcerer</button>
+                        <button class="btns" onclick="warlock()">Warlock</button>
+                        <button class="btns" onclick="wizard()">Wizard</button>
+                    </div>
+
+                    <h4 class="des">Description</h4>
+
+                    <div class="description">
+                        <p id="class-desc">The greatest strength of bards is their sheer versatility. Many bards prefer to stick to the sidelines in combat, using their magic to inspire their allies and hinder their foes from a distance. But bards are capable of defending themselves in melee if necessary, using their magic to bolster their swords and armor. Their spells lean toward charms and illusions rather than blatantly destructive spells. They have a wide-ranging knowledge of many subjects and a natural aptitude that lets them do almost anything well. Bards become masters of the talents they set their minds to perfecting, from musical performance to esoteric knowledge.</p>
+                    </div>
+                    <div class="selected">
+                            <h4>Selected:</h4>
+                            <input id="class-selected" type="text" readonly value="Bard">
+                    </div>
+                    <div class="ability">
+                        <h4>Primary Ability:</h4>
+                        <input id="ability" type="text" readonly value="Charisma">
+                    </div>
+                    <div class="page">
+                        <button class="main btns" onclick="previousClass()">Previous</button>
+                        <button class="main btns" onclick="nextClass()">Next</button>
+                    </div>
+                </div>
+
+                <div class="point">
+                        <h3>Points</h3>
+                        <div class="line"></div>
+                    <div class="table">
+
+                        <div class="pointage">
+
+                            <button class="btns" onclick="minStrength()">-</button>
+
+                            <div class="circle">
+
+                                <input id="strength" type="text" value="8" readonly>
+                                <p>Strength</p>
+
+                            </div>
+
+                            <button class="btns" onclick="plusStrength()">+</button>
+                        </div>
+                        <div class="pointage">
+
+                            <button class="btns" onclick="minDexterity()">-</button>
+
+                            <div class="circle">
+
+                                <input id="dexterity" type="text" value="8" readonly>
+                                <p>Dexterity</p>
+
+                            </div>
+
+                            <button class="btns" onclick="plusDexterity()">+</button>
+                        </div>
+                        <div class="pointage">
+
+                            <button class="btns" onclick="minConstitution()">-</button>
+
+                            <div class="circle">
+
+                                <input id="constitution" type="text" value="8" readonly>
+                                <p>Constitution</p>
+
+                            </div>
+
+                            <button class="btns" onclick="plusConstitution()">+</button>
+                        </div>
+                        <div class="pointage">
+
+                            <button class="btns" onclick="minIntelligence()">-</button>
+
+                            <div class="circle">
+
+                                <input id="intelligence" type="text" value="8" readonly>
+                                <p>Intelligence</p>
+
+                            </div>
+
+                            <button class="btns" onclick="plusIntelligence()">+</button>
+                        </div>
+                        <div class="pointage">
+
+                            <button class="btns" onclick="minWisdom()">-</button>
+
+                            <div class="circle">
+
+                                <input id="wisdom" type="text" value="8" readonly>
+                                <p>Wisdom</p>
+
+                            </div>
+
+                            <button class="btns" onclick="plusWisdom()">+</button>
+                        </div>
+                        <div class="pointage">
+
+                            <button class="btns" onclick="minCharisma()">-</button>
+
+                            <div class="circle">
+
+                                <input id="charisma" type="text" value="8" readonly>
+                                <p>Charisma</p>
+
+                            </div>
+
+                            <button class="btns" onclick="plusCharisma()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="point-left">
+                        <div class="circle">
+                            <input id="global-point" type="text" value="27" readonly>
+                            <p>Point Left</p>
+                        </div>
+                    </div>
+
+                    <div class="bonus">
+                        <h4>Race Bonus:</h4>
+                        <input id="race-bonus" type="text" readonly value="For all +1">
+                    </div>
+
+                    <div class="minimal-point">
+                        <p>The minimum required is 8</p>
+                    </div>
+                    <div class="maximum-point">
+                        <p>The maximum is 20</p>
+                    </div>
+                    <div class="no-point">
+                        <p>You have not enough points</p>
+                    </div>
+
+                    <div class="page">
+                        <button class="main btns" onclick="previousPoint()">Previous</button>
+                        <button class="main btns" onclick="nextPoint()">Next</button>
+                    </div>
+                </div> 
+                <div class="final">
+                    <h3>Start</h3>
+                    <div class="line"></div>
+                    <div class="info1">
+                        <h4>Your Race</h4>
+                        <input id="race-input" type="text" value="Human">
+                        <h4>Your Class</h4>
+                        <input id="class-input" type="text" value="Bard">
+                    </div>
+                    <div class="table">
+                        <h4>Points Assigned</h4>
+                        <div class="first-row">
+                            <div class="item">
+                                <h5>Strength</h5>
+                                <input id="strength2" type="text" value="8" readonly>
+                            </div>
+                            <div class="item">
+                                <h5>Dexterity</h5>
+                                <input id="dexterity2" type="text" value="8" readonly>
+                            </div>
+                            <div class="item">
+                                <h5>Constitution</h5>
+                                <input id="constitution2" type="text" value="8" readonly>
+                            </div>
+                        </div>
+                        <div class="first-row">
+                            <div class="item">
+                                <h5>Intelligence</h5>
+                                <input id="intelligence2" type="text" value="8" readonly>
+                            </div>
+                            <div class="item">
+                                <h5>Wisdom</h5>
+                                <input id="wisdom2" type="text" value="8" readonly>
+                            </div>
+                            <div class="item">
+                                <h5>Charisma</h5>
+                                <input id="charisma2" type="text" value="8" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="character">
+                        <h4>Character</h4>
+                        <div class="img">
+                            <img id="image-display" src="avatar-perso/8.png" alt="">
+                        </div>
+                        <div class="btn">
+                            <button onclick="imagePrecedente()"><</button>
+                            <button onclick="imageSuivante()">></button>
+                        </div>
+                    </div>
+                    <div class="name">
+                        <label>Name:</label>
+                        <input id="playerName" type="text" placeholder="Character Name">
+                    </div>
+                    <div class="page">
+                        <button class="main btns" onclick="previousFinal()">Previous</button>
+                        <button class="main btns" onclick="finishCharacter()">Finish</button>
+                    </div>
+                    <div class="no-name">
+                        <p>You need to enter a name</p>
+                    </div>
+
+                    <div class="black"></div>
+                    <div class="reconfirmation">
+                        <p>Are you certain? Once confirmed, you will be unable to modify your character. Your going to download your game file.</p>
+                    <div class="button">
+                        <button onclick="downloadJSON('CONQUEST-CHARACTER-SAVE.cqst', myData)" class="main">Yes</button>
+                        <button onclick="noConfirmation()" class="main btns">No</button>
+                    </div>
+                </div>
+
+                </div>
+                
+                
+            </div>
+        </div>
+
+
+        <!-- GAMEPLAY/MAIN UI DOWN -->
+
+        <div class="gameplay">
+
+            <div class="main-ui">
+                <div class="top-pv-info">
+                    <input class="level" type="text" value="1" readonly>
+                    <progress id="health-bar" value="120" max="120"></progress>
+                    <progress id="xp-bar" value="1000" max="1000"></progress>
+                    <input id="health-text" type="text" value="120/120" readonly>
+                    <input id="xp-text" type="text" value="1000/1000" readonly>
+                </div>
+    
+                <div class="save">
+                    <button class="main">Save</button>
+                </div>
+    
+                <div class="mainGameWindow">
+    
+                </div>
+    
+                <div class="bottom-window">
+                    <div class="nav">
+                        <button class="btns">1</button>
+                        <button class="btns">2</button>
+                        <button class="btns">3</button>
+                        <button class="btns">Stats</button>
+                    </div>
+                    <div class="page">
+    
+                    </div>
+                </div>
+                <div class="right">
+                    <button class="top btns">Character</button>
+                    <button class="btns">Inventory</button>
+                    <button class="btns">Equipements</button>
+                    <button class="btns" onclick="openMap()">Map</button>
+                    <button class="btns" onclick="openQuest()">Quests</button>
+                    <button class="btns">Points</button>
+                    <button class="btns">Option</button>
+                </div>
+            </div>
+            
+            <div class="main-map container">
+                <img src="map/main-map.jpg" alt="Image" class="movable-image">
+                <button class="map-button here" style="top: 140px; left: 120px;"><img src="icon/enter.png" alt=""></button>
+                <button class="map-button" style="top: 100px; left: 530px;"><img src="icon/enter.png" alt=""></button>
+                <button class="map-button" style="top: 360px; left: 650px;"><img src="icon/enter.png" alt=""></button>
+                <button class="map-button" style="top: 520px; left: 590px;"><img src="icon/enter.png" alt=""></button>
+                <button class="map-button" style="top: 630px; left: 1150px;"><img src="icon/enter.png" alt=""></button>
+                <button class="map-button" style="top: 140px; left: 1080px;"><img src="icon/enter.png" alt=""></button>
+                <button class="map-button" style="top: 270px; left: 1100px;"><img src="icon/enter.png" alt=""></button>
+                <button class="map-button" style="top: 370px; left: 1250px;"><img src="icon/enter.png" alt=""></button>
+                <button class="map-button" style="top: 40px; left: 1350px;"><img src="icon/enter.png" alt=""></button>
+                <button class="map-button" style="top: 350px; left: 1965px;"><img src="icon/enter.png" alt=""></button>
+                <button class="main btns" onclick="closeMap()">Close</button>
+
+                <div class="legend">
+                    <div class="text">
+                        <p>Place you can go</p>
+                        <p>The place where you are</p>
+                    </div>
+                    <div class="image">
+                        <img src="icon/go.png" alt="">
+                        <img src="icon/here.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="load">
+
+            <h3>Load Save File/Character File</h3>
+            <input class="main btns" type="file" id="fileInput" accept=".cqst">
+            <p>.cqst files</p>
+            <br>
+            <button id="startAfter" class="main btns">Continue</button>
+
+        </div>
+
+        <div class="cinematic">
+            <button id="next-button" class="main">&rarr;Next</button>
+            <img id="current-imagete" src="cinematic/img/3.png" alt="">
+            <audio id="current-audio"></audio>
+        </div>
+
+        <div class="quest-menu">
+            <div class="current-quest">
+                <div class="title">
+                    <h3>Current Quest</h3>
+                </div>
+                <div class="quest">
+                    <input type="text" value="NOM DE LA QUÊTE" readonly>
+                    <p>Pin: </p>
+                    <input type="checkbox">
+                    <button class="btns"></button>
+                </div>
+                
+                
+            </div>
+            <div class="quest-done">
+                <div class="title">
+                    <h3>Quest Done</h3>
+                </div>
+                <div class="quest">
+                    <input type="text" value="NOM DE LA QUÊTE" readonly>
+                </div>
+            </div>
+            <button class="main" onclick="questClose()" >Close</button> 
+        </div>
+        <div class="point-skill">
+            <button class="main">Close</button>
+            <div class="point">
+                <label for="">Skill points</label>
+                <input type="text" readonly value="2">
+            </div>
+            <div class="skill-container">
+                <div class="skill first">
+                    <img src="skill-img/1.jpeg" alt="">
+                    <h3>Village Protocol</h3>
+                    <p>Know the customs and social norms of the village to avoid missteps and gain the trust of residents.</p>
+                    <div class="button">
+                        <button>I</button>
+                        <button>II</button>
+                        <button>III</button>
+                        <button>IV</button>
+                        <button>V</button>
+                    </div>
+                </div>
+                <div class="skill">
+                    <img src="skill-img/2.jpeg" alt="">
+                    <h3>Duel Tactics</h3>
+                    <p>Expertise in strategies and techniques specific to duels between knights, such as the use of armor and weapons in close combat.</p>
+                    <div class="button">
+                        <button>I</button>
+                        <button>II</button>
+                        <button>III</button>
+                        <button>IV</button>
+                        <button>V</button>
+                    </div>
+                </div>
+                <div class="skill">
+                    <img src="skill-img/3.jpeg" alt="">
+                    <h3>Leadership and Coordination</h3>
+                    <p>Skill to direct and coordinate the actions of several warriors or allies, particularly for reconnaissance or defense missions.</p>
+                    <div class="button">
+                        <button>I</button>
+                        <button>II</button>
+                        <button>III</button>
+                        <button>IV</button>
+                        <button>V</button>
+                    </div>
+                </div>
+                <div class="skill">
+                    <img src="skill-img/4.jpeg" alt="">
+                    <h3>Strategic Defense</h3>
+                    <p>Ability to organize effective defenses to protect important positions or objectives, using resources and terrain optimally.</p>
+                    <div class="button">
+                        <button>I</button>
+                        <button>II</button>
+                        <button>III</button>
+                        <button>IV</button>
+                        <button>V</button>
+                    </div>
+                </div>
+                <div class="skill">
+                    <img src="skill-img/5.jpeg" alt="">
+                    <h3>Knowledge of Ingredients</h3>
+                    <p>Expertise in identifying the properties and effects of ingredients used in soup preparation, such as knowing whether an ingredient has beneficial or toxic effects.</p>
+                    <div class="button">
+                        <button>I</button>
+                        <button>II</button>
+                        <button>III</button>
+                        <button>IV</button>
+                        <button>V</button>
+                    </div>
+                </div>
+                <div class="skill">
+                    <img src="skill-img/6.jpeg" alt="">
+                    <h3>Negotiation</h3>
+                    <p>Ability to negotiate the terms of an exchange or agreement, influencing the outcome of the exchange by obtaining better terms or persuading the other party.</p>
+                    <div class="button">
+                        <button>I</button>
+                        <button>II</button>
+                        <button>III</button>
+                        <button>IV</button>
+                        <button>V</button>
+                    </div>
+                </div>
+                <div class="skill last">
+                    <img src="skill-img/7.jpeg" alt="">
+                    <h3>Knight Discipline</h3>
+                    <p>Ability to maintain strict discipline and uphold a code of honor, which may influence interactions with other characters or affect the management of equipment and resources.</p>
+                    <div class="button">
+                        <button>I</button>
+                        <button>II</button>
+                        <button>III</button>
+                        <button>IV</button>
+                        <button>V</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+
+
+    <script>
+        function nextRace() {
+            const races = document.getElementsByClassName("race");
+            const race = races[0];
+            race.style.display = "none";
+
+            const classes = document.getElementsByClassName("class");
+            const classe = classes[0];
+            classe.style.display = "block";
+
+            initialize();
+        }
+
+        function previousClass() {
+            const classes = document.getElementsByClassName("class");
+            const classe = classes[0];
+            classe.style.display = "none";
+
+            const races = document.getElementsByClassName("race");
+            const race = races[0];
+            race.style.display = "block";
+        }
+
+
+        function previousPoint() {
+            const classes = document.getElementsByClassName("class");
+            const classe = classes[0];
+            classe.style.display = "block";
+
+            const points = document.getElementsByClassName("point");
+            const point = points[0];
+            point.style.display = "none";
+        }
+
+
+        function previousFinal() {
+            const points = document.getElementsByClassName("point");
+            const point = points[0];
+            point.style.display = "block";
+
+            const finals = document.getElementsByClassName("final");
+            const final = finals[0];
+            final.style.display = "none";
+
+            document.getElementById('strength').value = strength; 
+            document.getElementById('dexterity').value = dexterity;
+            document.getElementById('constitution').value = constitution;
+            document.getElementById('intelligence').value = intelligence;
+            document.getElementById('wisdom').value = wisdom;
+            document.getElementById('charisma').value = charisma;
+        }
+
+        
+        
+    </script>
+    <script src="script/create-character.js"></script>
+    <script src="script/game.js"></script>
+</body>
+</html>
