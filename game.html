@@ -308,7 +308,7 @@
                     <button class="btns">Equipements</button>
                     <button class="btns" onclick="openMap()">Map</button>
                     <button class="btns" onclick="openQuest()">Quests</button>
-                    <button class="btns">Points</button>
+                    <button class="btns" onclick="openSkill()">Points</button>
                     <button class="btns">Option</button>
                 </div>
             </div>
@@ -381,7 +381,7 @@
             <button class="main" onclick="questClose()" >Close</button> 
         </div>
         <div class="point-skill">
-            <button class="main">Close</button>
+            <button onclick="closeSkill()" class="main">Close</button>
             <div class="point">
                 <label for="">Skill points</label>
                 <input type="text" readonly value="2">
@@ -530,7 +530,25 @@
             document.getElementById('charisma').value = charisma;
         }
 
-        
+        function openSkill() {
+            const gameplays = document.getElementsByClassName("gameplay");
+            const gameplay = gameplays[0];
+            gameplay.style.display = "none";
+
+            const pointskillMenus = document.getElementsByClassName("point-skill");
+            const pointskillMenu = pointskillMenus[0];
+            pointskillMenu.style.display = "block";
+        }
+
+        function closeSkill() {
+            const pointskillMenus = document.getElementsByClassName("point-skill");
+            const pointskillMenu = pointskillMenus[0];
+            pointskillMenu.style.display = "none";
+
+            const gameplays = document.getElementsByClassName("gameplay");
+            const gameplay = gameplays[0];
+            gameplay.style.display = "block";
+        }
         
     </script>
     <script src="script/create-character.js"></script>
