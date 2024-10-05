@@ -119,15 +119,19 @@
                 loadDiv.style.display = 'block';
             }
 
+            const createCharacterWindows = document.getElementsByClassName("creatCharacter");
+            const createCharacterWindow = createCharacterWindows[0];
+            createCharacterWindow.style.display = "none";
+
             const backgroundMusic = document.getElementById('backgroundMusic');
             backgroundMusic.src = 'song/newgame.mp3';
             
             backgroundMusic.volume = 0.2;
 
-            // Remettre la nouvelle musique au début
+            
             backgroundMusic.currentTime = 0;
             
-            // Jouer la nouvelle musique
+        
             backgroundMusic.play();
 
             const body = document.body;
@@ -137,10 +141,10 @@
         }
 
         window.addEventListener('beforeunload', function(event) {
-            // Annulation de la fermeture de la fenêtre
+ 
             event.preventDefault();
-            // Message de confirmation personnalisé
-            event.returnValue = 'Êtes-vous sûr de vouloir quitter la page ?';
+   
+            event.returnValue = 'Are You sure you want to quit the page? ';
         });
 
 
